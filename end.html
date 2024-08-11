@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://mnazelelez.com/css/all.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/aos.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/vendors.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/bootstrap.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/main.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/front-assets/css/style.css">
+</head>
+<body>
+    <style>
+        .requestForm__form {
+    position: relative;
+    margin-top: 80px; /* أو أي قيمة تريدها */
+    padding: 20px;
+    background-color: #fff; /* لون خلفية بيضاء */
+    border-radius: 10px; /* زوايا دائرية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+      </style>
+<style>
+  
+   
+           .sidenav {
+               height: 100%;
+               width: 0;
+               position: fixed;
+               z-index: 1000;
+               top: 0;
+               right: 0;
+               background-color: #fff;
+               overflow-x: hidden;
+               transition: 0.5s;
+               padding-top: 60px;
+               box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+           }
+   
+           .sidenav a {
+               padding: 10px 15px;
+               text-decoration: none;
+               font-size: 18px;
+               color: #A19781;
+               display: block;
+               transition: 0.3s;
+           }
+           .sidenav button {
+               padding: 10px 15px;
+               text-decoration: none;
+               font-size: 18px;
+               display: block;
+               transition: 0.3s;
+           }
+   
+          
+   
+           .sidenav .closebtn {
+               position: absolute;
+               top: 0;
+               left: 25px;
+               font-size: 36px;
+               margin-right: 50px;
+           }
+   
+           @media screen and (max-height: 450px) {
+               .sidenav {padding-top: 15px;}
+               .sidenav a {font-size: 18px;}
+           }
+   
+           .nav-icons {
+               display: none; /* يتم إخفاء الأيقونة في البداية */
+           }
+   
+           .nav-icons.active {
+               display: block; /* عرض الأيقونة عند النقر عليها */
+               cursor: pointer;
+           }
+       </style>
+  
+   
+       <nav class="navbar navbar-expand-md navbar-white bg-white shadow-sm fixed  header -type-9 ">
+           <div class="container">
+               <a class="navbar-brand" href="index.html"  onclick="redirectToPath()" ><img src="images/WhatsApp Image 2024-06-14 at 8.23.00 PM.jpeg" width="100px" alt=""></a>
+               <button class="navbar-toggler "  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<i class="navbar-toggler-icon"></i>                   </button>
+               <div class="collapse navbar-collapse   " id="navbarNav">
+                   <ul class="navbar-nav clas m-auto">
+                      
+                
+                       <li class="nav-item">
+                           <a class="nav-link" href="index.html"  onclick="redirectToPath()"  >الرئيسيه</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link " href="test.html" onclick="redirectToPath()" tabindex="-1" aria-disabled="true"     >من نحن</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link " href="card.html" onclick="redirectToPath()" tabindex="-1" aria-disabled="true"     > مشاريعنا</a>
+                       </li>
+                       <li class="nav-item">
+                        <button class="header__button js-toggle-requestForm text-white" style="background-color:#A19781; color: white; ">
+                            احجز شقتك الان
+                        </button>
+                       </li>
+                       
+                   </ul>
+               </div>
+           </div>
+       </nav>
+   
+
+       <div class="sidenav">
+        <a href="#"   onclick="redirectToPath()"  class="closebtn">&times;</a>
+        <a href="index.html"  onclick="redirectToPath()" >الرئيسية</a>
+        <a href="test.html"  onclick="redirectToPath()" > من نحن</a>
+        <a href="card.html"  onclick="redirectToPath()" > مشاريعنا</a>
+        <button class="header__button js-toggle-requestForm text-center m-auto" style="background-color:#A19781; text-align: center; margin-right: 6px; ">
+             احجز شقتك الان
+        </button>       
+     </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidenav = document.querySelector('.sidenav');
+            const navIcons = document.querySelector('.navbar-toggler');
+            const closeBtn = document.querySelector('.closebtn');
+    
+            // فتح القائمة الجانبية
+            navIcons.addEventListener('click', function() {
+                sidenav.style.width = '300px';
+            });
+    
+            // إغلاق القائمة الجانبية
+            closeBtn.addEventListener('click', function() {
+                sidenav.style.width = '0';
+            });
+        });
+    </script>
+    
+      <!-- cursor start -->
+      <div class="cursor js-cursor">
+        <div class="cursor__wrapper">
+          <div class="cursor__follower js-follower"></div>
+          <div class="cursor__label js-label"></div>
+          <div class="cursor__icon js-icon"></div>
+        </div>
+      </div>
+  <div class="menu -top-header js-menu">
+    <div class="menu__left">
+      <div class="menuNav ">
+        <div class="menuNav__item js-menuClose js-menu-button">
+          <a href="https://mnazelelez.com/#home">الرئيسية
+          </a>
+        </div>
+
+        <div class="menuNav__item js-menuClose js-menu-button">
+          <a href="https://mnazelelez.com/#about">
+              من نحن
+          </a>
+        </div>
+
+        <div class="menuNav__item js-menuClose js-menu-button">
+          <a href="https://mnazelelez.com/#service">
+              خدماتنا
+          </a>
+        </div>
+
+        <div class="menuNav__item js-menuClose js-menu-button">
+          <a href="https://mnazelelez.com/#projects">
+              مشاريعنا
+          </a>
+        </div>
+
+        <div class="menuNav__item js-menuClose js-menu-button">
+          <a href="https://mnazelelez.com/#advanteg">
+              مميزات العمل
+          </a>
+
+        </div>
+
+        <div class="menuNav__item js-menuClose js-menu-button">
+          <a href="https://mnazelelez.com/contact">اتصل بنا</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu__right">
+      <div class="menuImage js-menuImage">
+        <img src="https://mnazelelez.com/storage/favicon_image/8UW7GZNN67vpATB7jmXOMr1fODTH1grBUHMamTAF.png" alt="image">
+      </div>
+    </div>
+
+    <div class="menu__close js-menuClose js-menu-button">
+      <i class="icon-cross"></i>
+    </div>
+  </div>
+  <style>
+    .page_header{
+        background-image: image('image/pexels-photo-1022936');
+    }
+  </style>
+  <div class="page_header header-dark ">
+    <div class="page_header_inner">
+        <div class="container">
+            <div class="page_header_content d-flex align-items-center justify-content-between">
+                <h2 class="heading">مشروع حي الريان / جدة</h2>
+                <ul class="breadcrumb d-flex align-items-center">
+                    <li><a href="https://mnazelelez.com">الرئيسية</a></li>
+                    <li><a href="#">المشاريع</a></li>
+                    <li class="active">حي الريان / جدة</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+         .header__button {
+background-color: #000; /* لون خلفية الزر */
+color: #fff; /* لون نص الزر */
+padding: 5px ;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-align: center;
+}
+</style>
+
+<br>
+<br>
+<br>
+<style>
+ 
+
+    .box-wrapper {
+        display: flex;
+        max-width: 1000px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        justify-content: center;
+        margin: auto;
+        flex-direction: row;
+    }
+
+    .photo-side {
+        flex: 1;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .photo-side img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .info-side {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .info-side h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #A19781;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .info-side p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .info-side .price-tag {
+        font-size: 20px;
+        color: #e74c3c;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .info-side .property-details {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .info-side .property-details li {
+        margin-bottom: 8px;
+    }
+
+    /* لجعل التصميم مناسب للشاشات الصغيرة */
+    @media (max-width: 768px) {
+        .box-wrapper {
+            flex-direction: column;
+            max-width: 90%;
+        }
+
+        .photo-side {
+            margin-bottom: 20px;
+        }
+
+        .info-side h2 {
+            text-align: center;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="box-wrapper">
+    <div class="photo-side">
+        <img src="images/pexels-alex-qian-1180283-2343465.jpg" alt="صورة العقار">
+    </div>
+    <div class="info-side">
+        <h2>وصف العقار</h2>
+        <p>
+            عقار فاخر بموقع مميز وتصميم عصري. يوفر جميع وسائل الراحة الحديثة.
+        </p>
+        <p class="price-tag">السعر: 1,500,000 ريال سعودي</p>
+        <ul class="property-details">
+            <li>المساحة: 350 متر مربع</li>
+            <li>عدد الغرف: 4 غرف نوم</li>
+            <li>عدد الحمامات: 3 حمامات</li>
+            <li>مسبح وحديقة خاصة</li>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<style>
+ 
+    .features-section {
+        background-color: #28776b;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        color: #fff;
+        flex-wrap: wrap;
+    }
+
+    .feature-item {
+        flex: 1 1 25%; /* يجعل العنصر يأخذ 25% من العرض الكلي */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .feature-item i {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .feature-item h3 {
+        margin: 3px 0;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .feature-item p {
+        margin: 0;
+        font-size: 20px;
+        color: #eaeaea;
+    }
+
+    @media (max-width: 768px) {
+        .feature-item {
+            flex: 1 1 50%; /* يجعل العنصر يأخذ 50% من العرض الكلي على الشاشات الصغيرة */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .feature-item {
+            flex: 1 1 100%; /* يجعل العنصر يأخذ 100% من العرض الكلي على الشاشات الأصغر */
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="features-section">
+    <div class="feature-item">
+        <i class="fas fa-handshake"></i>
+        <h3>1 سنة</h3>
+        <p>اتحاد ملاك مجاناً</p>
+    </div>
+    <div class="feature-item">
+        <i class="fas fa-lightbulb"></i>
+        <h3>5 سنوات</h3>
+        <p>كهرباء وسباكة</p>
+    </div>
+    <div class="feature-item">
+        <i class="fas fa-tools"></i>
+        <h3>20 سنة</h3>
+        <p>هيكل إنشائي</p>
+    </div>
+    <div class="feature-item">
+        <i class="fas fa-plug"></i>
+        <h3>25 سنة</h3>
+        <p>قواطع وأفياش</p>
+    </div>
+</div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="box-container">
+        <div class="row">
+            <div class="col-md-4 features-title" style="color:#A19781 ;">
+                الخصائص والمميزات
+            </div>
+            <div class="col-md-4">
+                <ul class="features-list">
+                    <li> غاز مركزي</li>
+                    <li> غرفة سائق
+                    </li>
+                    <li> كاميرات مراقبة</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="features-list">
+                    <li>غرفة عاملة منزلية </li>
+                    <li> غرفة عاملة منزلية</li>
+                    <li>اتحاد ملاك سنة مجانا
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+       
+       body{
+           font-family: "Cairo", sans-serif;
+ font-optical-sizing: auto;
+ font-style: normal;
+ font-variation-settings:  "slnt" 0;
+ direction: rtl; /* تحديد الاتجاه من اليمين إلى اليسار */
+
+       }
+  
+
+.box-container {
+    border: 2px solid #ddd; /* إطار خفيف وأنيق */
+    padding: 30px; /* تباعد داخلي مريح */
+    background-color: #fff; /* خلفية بيضاء نقية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل ناعم لإضفاء عمق */
+    border-radius: 10px; /* زوايا مستديرة */
+    box-sizing: border-box; /* احتساب الإطار ضمن الأبعاد */
+    max-width: 900px; /* تحديد عرض البوكس */
+    margin: auto; /* تمركز البوكس */
+}
+
+.features-title {
+    font-size: 28px; /* تكبير حجم النص */
+    font-weight: bold; /* جعل النص غامقًا */
+    color: #333; /* لون النص */
+    margin-bottom: 20px; /* تباعد سفلي */
+    text-align: center; /* توسيط النص */
+    border-bottom: 2px solid #ddd; /* خط سفلي أنيق */
+    padding-bottom: 10px; /* تباعد داخلي سفلي */
+}
+
+.features-list {
+    list-style-type: none; /* إزالة النقاط الافتراضية */
+    padding-right: 0; /* إزالة التباعد من اليمين */
+    padding-left: 0; /* إزالة التباعد من اليسار */
+}
+
+.features-list li {
+    position: relative; /* لتنسيق الأيقونة المخصصة */
+    padding-right: 25px; /* تباعد داخلي قبل النص من اليمين */
+    margin-bottom: 15px; /* تباعد بين العناصر */
+    font-size: 16px; /* حجم الخط */
+    color: #555; /* لون النص */
+}
+
+.features-list li::before {
+    content: "\2022"; /* رمز الدائرة */
+    position: absolute; 
+    right: 0; 
+    top: 0;
+    color: #A19781; /* لون الدائرة */
+    font-size: 20px; /* حجم الدائرة */
+    line-height: 1; /* ضبط محاذاة الدائرة */
+}
+  </style>
+
+<footer class="bg-dark-f" id="call">
+    <div class="container">
+      <div class="row p-5">
+        <!-- Logo Section -->
+        <div class="col-md-3 mb-4">
+          <img src="images/Asset 1.png" alt="Logo" class="img-fluid">
+        </div>
+        
+        <!-- Address Section -->
+        <div class="col-md-3 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="square-footer m-1"></div>
+            <h5 class="text-white mb-0">العنوان</h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="icon-footer m-1"><i class="fa-solid fa-location-dot"></i></div>
+            <p class="text-white mb-0">المملكة العربية السعودية - جدة</p>
+          </div>
+        </div>
+        
+        <!-- Contact Information Section -->
+        <div class="col-md-3 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="square-footer me-4"></div>
+            <h5 class="text-white m-1">معلومات التواصل</h5>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <div class="icon-footer me-3"><i class="fa-solid fa-phone"></i></div>
+            <p class="text-white m-1">+966577120215</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="icon-footer me-3"><i class="fa-solid fa-envelope"></i></div>
+            <p class="text-white m-1">
+              <a href="mailto:example@example.com" class="text-white text-decoration-none">example@example.com</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Pages Section -->
+        <div class="col-md-3 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="square-footer m-1"></div>
+            <h5 class="text-white mb-0">الصفحات</h5>
+          </div>
+          <ul class="list-unstyled me-3">
+            <li><a href="index.html" class="text-white text-decoration-none">الرئيسية</a></li>
+            <li><a href="test.html" class="text-white text-decoration-none">من نحن</a></li>
+            <li><a href="card.html" class="text-white text-decoration-none">مشاريعنا</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="mode_switcher">
+    <span><i class="fa-solid fa-moon"></i></span>
+  </div>
+  <div class="requestForm js-requestForm">
+    <div class="requestForm__overlay js-toggle-requestForm"></div>
+
+    <div class="requestForm__content">
+      <div class="requestForm__container">
+        <!-- <div class="requestForm__close js-toggle-requestForm">
+          <button>
+            <i class="icon-cross"></i>
+          </button>
+        </div>
+
+        <h3 class="requestForm__title"><span class="text-accent-1">Request</span><br> a visit</h3> -->
+
+        <div class="requestForm__form contactForm row y-gap-30">
+          <form action="https://mnazelelez.com/new-order" method="post">
+              <input type="hidden" name="_token" value="QtXt7LJwmMKWxdcKCpVFi7GJx5kRE6vsVzkwqfQI">            <div class="mb-3 position-relative">
+              <!-- <div class="icont-form">
+                <i class="fa-regular fa-user"></i>
+              </div> -->
+              <input type="text" class="form-control" placeholder="الاسم" name="name" value="" required>
+            </div>
+            <div class="mb-3 position-relative">
+              <!-- <div class="icont-form">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div> -->
+              <input type="text" class="form-control" placeholder="رقم الجوال" name="phone" value="" required>
+            </div>
+            <div class="mb-3 position-relative">
+              <!-- <div class="icont-form">
+                <i class="fa-solid fa-house"></i>
+              </div> -->
+              <select class="form-select" aria-label="Default select example" name="type" required>
+                  <option  selected  value=""> نوع العقار</option>
+                  <option  value="شقق">شقق</option>
+                  <option  value="فلة">فلة</option>
+                  <option  value="اراضي">اراضي</option>
+                  <option  value="قصور">قصور</option>
+                  <option  value="عمارة">عمارة</option>
+                  <option  value="أخرى">أخرى</option>
+              </select>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div class="mb-3 position-relative">
+                <!-- <div class="icont-form">
+                  <i class="fa-regular fa-credit-card"></i>
+                </div> -->
+                <select class="form-select" style="width: 280px;" aria-label="Default select example" name="payment" required>
+                    <option  selected  value="">طريقة الدفع</option>
+                    <option  value="كاش">كاش</option>
+                    <option  value="بنك">بنك</option>
+                </select>
+              </div>
+              <div class="mb-3 position-relative">
+                <!-- <div class="icont-form">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div> -->
+                <select class="form-select" style="width: 280px;" aria-label="Default select example" name="how_know_us" required>
+                    <option  selected  value="">كيف عرفت عنا</option>
+                    <option  value="انستجرام">انستجرام</option>
+                    <option  value="سناب">سناب</option>
+                    <option  value="صديق">صديق</option>
+                    <option  value="غير ذلك">غير ذلك</option>
+                </select>
+              </div>
+            </div>
+            <button class="button -md -dark-1 bg-accent-1 text-white col-12">أرسل طلبك</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript -->
+<!-- Core JS -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://mnazelelez.com/front-assets/js/jquery-3.6.0.min.js"></script>
+<script src="https://mnazelelez.com/front-assets/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!-- Swiper for Slider Type -->
+<script src="https://mnazelelez.com/plugins/swiper/swiper-bundle.min.js"></script>
+
+<!-- Funfacts -->
+<!-- <script src="../assets/js/funfacts.js"></script> -->
+
+<!-- Portfolio -->
+<script src="https://mnazelelez.com/plugins/isotope/isotope.pkgd.min.js"></script>
+<script src="https://mnazelelez.com/plugins/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="https://mnazelelez.com/plugins/isotope/packery-mode.pkgd.js"></script>
+<script src="https://mnazelelez.com/plugins/isotope/tilt.jquery.js"></script>
+<script src="https://mnazelelez.com/plugins/isotope/isotope-init.js"></script>
+
+
+
+<!-- Cursor Effect -->
+<script src="https://mnazelelez.com/plugins/cursor-effect/cursor-effect.js"></script>
+
+<!-- Select2 -->
+<script src="https://mnazelelez.com/plugins/select2/js/select2.min.js"></script>
+
+<!-- AOS effect JS -->
+<script src="https://mnazelelez.com/plugins/aos/aos.js"></script>
+
+<!-- Theme Custom JS -->
+<script src="https://mnazelelez.com/front-assets/js/theme.js"></script>
+  <script src="https://mnazelelez.com/js/vendors.js"></script>
+  <script src="https://mnazelelez.com/js/aos.js"></script>
+  <script src="https://mnazelelez.com/js/main.js"></script>
+
+  <script>
+    AOS.init();
+
+      
+        </script>
+</body>
+</html>

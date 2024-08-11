@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-7fV9x2Aua0m7L5t5N+dyNbUdL88k0A8BzwJe4f7sF3ajJpZIC4WReMChujVf7reZIw7LnbWShs2qVhRO5y5iJw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        body {
+            font-family: "Changa", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            right: 0;
+            background-color: #0A284E;
+            overflow-x: hidden;
+            transition: width 0.5s ease;
+            padding-top: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 992px) {
+            .sidenav {
+                width: 0;
+            }
+        }
+
+        .navbar-toggler {
+            color: #fff;
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+        }
+
+        .container-main {
+            padding-right: 0; /* تأكد من عدم وجود padding-right افتراضي */
+            transition: padding-right 0.5s;
+            
+        }
+
+        @media screen and (min-width: 992px) {
+            .container-main {
+                padding-right: 250px; /* زيادة padding-right لتفادي تغطية المحتوى */
+            }
+        }
+
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            left: auto;
+            position: static;
+            
+            display: flex;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #fff;
+        }
+            @media (min-width: 992px) {
+        .customers-table {
+            width: calc(100% - 250px); /* جعل عرض الجدول يأخذ باقي المساحة عند فتح الحافة الجانبية */
+            margin-left: 250px; /* تحريك الجدول إلى اليمين لتفادي تغطية الحافة الجانبية */
+        }
+    }
+
+    /* تعديل حجم الجدول على شاشات صغيرة */
+    @media (max-width: 991px) {
+        .customers-table {
+            width: 100%; /* جعل الجدول يأخذ العرض الكامل عندما تكون الشاشة صغيرة */
+            margin-left: 0; /* إعادة تعيين التباعد الأيسر للجدول */
+        }
+    }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 36px;
+            margin-right: 50px;
+        }
+
+        .nav-icons {
+            display: none;
+        }
+
+        .nav-icons.active {
+            display: block;
+            cursor: pointer;
+        }
+
+        .navbar {
+            background-color: #fff; /* لون خلفية Navbar */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل للناف بار */
+            position: fixed;
+            width: 100%; /* عرض الناف بار على الشاشة بالكامل */
+            z-index: 2; /* تحديد الترتيب الظاهري فوق الصفحة */
+            top: 0; /* تثبيت الناف بار في أعلى الصفحة */
+            text-align: center; /* محاذاة العناصر في الناف بار بالوسط */
+        }
+
+        .navbar-brand {
+            color: #0A284E; /* لون النص للعلامة التجارية */
+            font-weight: bold; /* سمك الخط */
+            padding: 15px 0; /* تباعد النص داخل العلامة التجارية */
+            display: block; /* عرض العلامة التجارية كعنصر بلوك */
+        }
+
+        .navbar-nav {
+            margin: 0 auto; /* توسيط الروابط داخل الناف بار */
+        }
+
+        .nav-item {
+            display: inline-block; /* عرض العناصر كعناصر متجانسة */
+            margin-left: 20px; /* تباعد بين العناصر */
+        }
+
+        .nav-link {
+            color: #0A284E; /* لون النص للروابط */
+            font-weight: 500; /* سمك الخط */
+            text-decoration: none; /* إزالة تزيين الروابط */
+            padding: 15px 10px; /* تباعد النص داخل الروابط */
+            transition: all 0.3s ease; /* تحويل التحولات لجميع الخصائص */
+        }
+
+        .nav-link:hover {
+            color: #fff; /* لون النص عند التحويم */
+            border-radius: 5px; /* تدوير الزوايا للروابط عند التحويم */
+        }
+
+        .stats-section {
+            padding: 30px ;
+            text-align: center;
+            font-size: small;
+
+        }
+
+        .stats-card1 {
+            background-color: #fff;
+            padding: 8px;
+            margin: 8px;
+            border: 1px solid #0A284E;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stats-card2 {
+            background-color: #fff;
+            padding: 8px;
+            margin: 8px;
+            border: 1px solid red;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stats-card3 {
+            background-color: #fff;
+            padding: 8px;
+            margin: 8px;
+            border: 1px solid seagreen;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stats-card4 {
+            background-color: #fff;
+            padding: 8px;
+            margin: 8px;
+            border: 1px solid #C2E0C6;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stats-card5 {
+            background-color: #fff;
+            padding: 8px;
+            margin: 8px;
+            border: 1px solid #F5D0E8;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stats-card6 {
+            background-color: #fff;
+            padding: 8px;
+            margin: 8px;
+            border: 1px solid rgb(204,153, 255);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 6px;
+        }
+
+        .requests-section {
+            padding: 50px 0;
+            text-align: right;
+        }
+        .requestss-section {
+            padding:30px 0;
+            margin-top: 40px;
+            text-align: right;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px;
+            padding: 20px;
+            width: auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #333;
+            
+        }
+
+        thead {
+            background-color: #0A284E;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            font-weight: bold;
+            font-size: 16px;
+            background-color: #0A284E;
+            color: white;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e2e6ea;
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        .action-button {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 5px;
+        }
+
+        .action-button:hover {
+            color: #0056b3;
+        }
+
+        .delete-button {
+            color: #dc3545;
+        }
+
+        .delete-button:hover {
+            color: #c82333;
+        }
+
+        @media (max-width: 768px) {
+            thead {
+                display: none;
+            }
+            tr {
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                background-color: #ffffff;
+                justify-self: center;
+
+                direction: rtl;
+            }
+            td {
+                display: block;
+                text-align: left;
+                position: relative;
+                padding: 12px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                right: 0;
+                width: 40%;
+                padding: 10px;
+                font-weight: bold;
+                background-color: #007bff;
+                color: white;
+                border-left: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                white-space: nowrap;
+                text-align: left;
+            }
+
+            .actions {
+                display: block;
+                text-align: left;
+                position: relative;
+                padding: 12px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+            }
+
+            .action-button {
+                font-size: 20px;
+                text-align: center;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-white bg-white shadow-sm fixed">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" style="color: #0A284E;">الرئيسية</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+     
+    </div>
+ </nav>
+ <script>
+
+</script>
+ <div class="sidenav">
+    <div style="text-align: center; margin-bottom: 30px; ">
+        <img src="images/Asset 1.png"  width="100px" style="justify-content: center;  margin: auto;" alt="">
+
+    </div>
+    <style>
+        /* أسلوب اختياري لتخصيص حجم الأيقونات */
+        .fa {
+            font-size: 24px;
+            margin-right: 5px; /* تعديل حسب الحاجة */
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <a href="index.html" >  <i class="fas fa-home" style="margin-top: 2px ; padding: 2px;"></i> الرئيسية  </a> 
+    <a href="#" onclick="openForm()">      <i class="fas fa-users" style="margin-top: 3px ; padding: 2px;"></i>
+        اضافه مشروع</a>
+    <a href="#" onclick="openOverlay()">      <i class="fas fa-tasks" style="margin-top: 3px ; padding: 2px;"></i>
+         مشاريع تم اضافتها   </a>
+    <a href="#">    <i class="far fa-calendar-check" style="margin-top: 3px ; padding: 2px;"></i>
+حجوزات    </a>
+   
+</div>
+ <div class="container-main">
+  
+    <div class="stats-section">
+        <div class="container">
+            <div class="requestss-section">
+                <div class="container">
+                    <h2> الاحصائيات</h2>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stats-card1">
+                        <h5> اجمالي الطلبات: 234</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card2">
+                        <h5>  مشاريع تم رفعها: 36</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card3">
+                        <h5> عدد المستخدمين : 257</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- الأسطر الإضافية للإحصائيات -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stats-card4">
+                        <h5>تم الموافقه: 0</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card5">
+                        <h5>تم البيع: 0 </h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card6">
+                        <h5>خيارات اخري </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="requests-section">
+        <div class="container">
+            <h2>آخر الطلبات</h2>
+            <p>قائمة بآخر الطلبات التي تلقيناها.</p>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr style="text-align: center;">
+                    <th>رقم العقار</th>
+                    <th>اسم العقار</th>
+                    <th>الموقع</th>
+                    <th>السعر</th>
+                    <th>المساحة</th>
+                    <th>عدد الغرف</th>
+                    <th>إجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">2</td>
+                    <td data-label="اسم العقار">شقة حديثة</td>
+                    <td data-label="الموقع">جدة</td>
+                    <td data-label="السعر">1,200,000 SAR</td>
+                    <td data-label="المساحة">200 م²</td>
+                    <td data-label="عدد الغرف">3</td>
+                    <td class="actions">
+                        <button class="action-button m-2"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <!-- أضف المزيد من الصفوف هنا -->
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidenav = document.querySelector('.sidenav');
+            const navIcons = document.querySelector('.navbar-toggler');
+            const closeBtn = document.querySelector('.closebtn');
+    
+            // فتح القائمة الجانبية من اليمين
+            navIcons.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    sidenav.style.width = '250px'; // تعيين عرض القائمة على الشاشات الصغيرة
+                }
+            });
+    
+       
+        function openNav() {
+        document.getElementById(".sidenav").style.width = "250px";
+        document.getElementById("main").style.marginRight = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById(".sidenav").style.width = "0";
+        document.getElementById("main").style.marginRight = "0";
+    }
+    
+        // فتح القائمة الجانبية عند النقر على الايقونة
+        navbarToggler.addEventListener('click', function() {
+            sidenav.style.width = '250px';
+        });
+
+    </script>
+    <!-- Form Overlay -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="form-container">
+            <button class="close-button" onclick="closeForm()">&times;</button>
+            <img src="images/WhatsApp Image 2024-06-14 at 8.23.00 PM.jpeg" alt="Logo">
+            <h3>تسجيل الدخول وإدخال المتطلبات</h3>
+            <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+                <div class="form-sections">
+                    <div class="form-section">
+                        <label for="image1">الصوره:</label>
+                        <input type="file" id="image1" name="image1" accept="image/*" required>
+                    </div>
+                    <div class="form-section">
+                        <label for="username">عنوان البوست</label>
+                        <input type="text" id="username" name="title" required>
+                    </div>
+                    <div class="form-section">
+                        <label for="password">نوع المشروع</label>
+                        <input type="text" id="password" name="textarea" required>
+                    </div>
+                    <div class="form-section">
+                        <label for="field2">حاله المشروع</label>
+                        <input type="text" id="field2" name="country" required>
+                    </div>
+                    <div class="form-section">
+                        <label for="field3">الموقع</label>
+                        <input type="text" id="field3" name="area" required>
+                    </div>
+                    <div class="form-section">
+                        <label for="floors">نسبه الانجاز</label>
+                        <input type="text" id="floors" name="floors" required>
+                    </div>
+                </div>
+                <button type="submit">إرسال وتسجيل</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the form overlay
+        function openForm() {
+            document.getElementById('formOverlay').style.display = 'flex';
+        }
+
+        // Function to close the form overlay
+        function closeForm() {
+            document.getElementById('formOverlay').style.display = 'none';
+        }
+    </script>
+    <style>
+        /* Styling for the form overlay */
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Styling for the form container */
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Flexbox to align form sections */
+        .form-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        /* Styling each form section */
+        .form-section {
+            flex: 1;
+            min-width: 30%;
+            max-width: calc(33% - 20px);
+            direction: rtl;
+text-align: right;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+            color: #495057;
+            font-size: 16px;
+            font-weight: 500;
+            direction: rtl;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="password"],
+        .form-section input[type="file"] {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        .form-container button[type="submit"] {
+            width: 100%;
+            padding: 16px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        /* Close button styling */
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: black;
+            border: none;
+            border-radius: 10%;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-button:hover {
+            background-color: #c82333;
+        }
+
+        /* Styling for the button that opens the form */
+        .open-form-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1100;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .open-form-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Logo Styling */
+        .form-container img {
+            max-width: 100px; /* Adjust size of the logo */
+            margin-bottom: 20px;
+        }
+    </style>
+    <style>
+      
+      .overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .card-page {
+          background-color: white;
+          padding: 50px;
+          border-radius: 10px;
+          max-width: 90%;
+          max-height: 90%;
+          overflow-y: auto;
+          position: relative;
+      }
+
+      .card-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 20px;
+      }
+
+      .card {
+          width: 100%;
+          max-width: 350px;
+          background-color: #f9f9f9;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          text-align: right;
+          position: relative;
+          transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+          transform: scale(1.03);
+      }
+
+      .card img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+      }
+
+      .card h3 {
+          font-size: 20px;
+          margin: 10px 15px;
+          color: #333;
+          display: flex;
+display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .card .actions {
+          display: flex;
+          gap: 10px;
+      }
+
+      .card .actions button {
+          background: none;
+          border: none;
+          color: #333;
+          font-size: 16px;
+          cursor: pointer;
+          transition: color 0.3s;
+      }
+
+      .card table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 0;
+          text-align: right;
+      }
+
+      .card table th, .card table td {
+          padding: 10px;
+          text-align: right;
+          border-bottom: 1px solid #ddd;
+      }
+
+      .card table th {
+          background-color: #f2f2f2;
+          color: #333;
+          font-weight: bold;
+      }
+
+      .card table td {
+          color: #666;
+      }
+
+      .open-button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          margin-top: 20px;
+      }
+
+      .open-button:hover {
+          background-color: #0056b3;
+      }
+
+      .close-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: #dc3545;
+          color: white;
+          border: none;
+          border-radius: 20%;
+          font-size: 20px;
+          cursor: pointer;
+          padding: 5px 10px;
+          z-index: 10;
+      }
+
+      .close-button:hover {
+          background-color: #c82333;
+      }
+  </style>
+
+  <div class="overlay" id="overlay">
+      <div class="card-page">
+          <button class="close-button" onclick="closeOverlay()">×</button>
+          <div class="card-container">
+              <div class="card">
+                  <img src="images/pexels-pixabay-53610.jpg" alt="Turquoise Villas 3">
+                  <div class="card-content">
+                      <h3>
+                          برج سكني
+                          <div class="actions">
+                              <button><i class="fas fa-edit" style="color: #00bcd4;"></i></button>
+                              <button><i class="fas fa-trash" style="color: red;"></i></button>
+                          </div>
+                      </h3>
+                      <table>
+                          <tr>
+                              <th>نوع المشروع</th>
+                              <td>سكني</td>
+                          </tr>
+                          <tr>
+                              <th>وصف المشروع</th>
+                              <td>فلل مستقلة</td>
+                          </tr>
+                          <tr>
+                              <th>حالة البيع</th>
+                              <td>مفتاح للبيع</td>
+                          </tr>
+                          <tr>
+                              <th>الموقع</th>
+                              <td>حي السلمانية، الرياض</td>
+                          </tr>
+                          <tr>
+                              <th>نسبة الإنجاز</th>
+                              <td>86%</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="card">
+                  <img src="images/pexels-pixabay-53610.jpg" alt="Turquoise Villas 3">
+                  <div class="card-content">
+                      <h3>
+                          برج سكني
+                          <div class="actions">
+                              <button><i class="fas fa-edit" style="color: #00bcd4;"></i></button>
+                              <button><i class="fas fa-trash" style="color: red;"></i></button>
+                          </div>
+                      </h3>
+                      <table>
+                          <tr>
+                              <th>نوع المشروع</th>
+                              <td>سكني</td>
+                          </tr>
+                          <tr>
+                              <th>وصف المشروع</th>
+                              <td>فلل مستقلة</td>
+                          </tr>
+                          <tr>
+                              <th>حالة البيع</th>
+                              <td>مفتاح للبيع</td>
+                          </tr>
+                          <tr>
+                              <th>الموقع</th>
+                              <td>حي السلمانية، الرياض</td>
+                          </tr>
+                          <tr>
+                              <th>نسبة الإنجاز</th>
+                              <td>86%</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="card">
+                  <img src="images/pexels-pixabay-53610.jpg" alt="Turquoise Villas 3">
+                  <div class="card-content">
+                      <h3>
+                          برج سكني
+                          <div class="actions">
+                              <button><i class="fas fa-edit" style="color: #00bcd4;"></i></button>
+                              <button><i class="fas fa-trash" style="color: red;"></i></button>
+                          </div>
+                      </h3>
+                      <table>
+                          <tr>
+                              <th>نوع المشروع</th>
+                              <td>سكني</td>
+                          </tr>
+                          <tr>
+                              <th>وصف المشروع</th>
+                              <td>فلل مستقلة</td>
+                          </tr>
+                          <tr>
+                              <th>حالة البيع</th>
+                              <td>مفتاح للبيع</td>
+                          </tr>
+                          <tr>
+                              <th>الموقع</th>
+                              <td>حي السلمانية، الرياض</td>
+                          </tr>
+                          <tr>
+                              <th>نسبة الإنجاز</th>
+                              <td>86%</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+              <!-- يمكنك تكرار الكروت (cards) هنا حسب الحاجة -->
+          </div>
+      </div>
+  </div>
+
+  <script>
+      function openOverlay() {
+          document.getElementById("overlay").style.display = "flex";
+      }
+
+      function closeOverlay() {
+          document.getElementById("overlay").style.display = "none";
+      }
+  </script>
+</body>
+</html>

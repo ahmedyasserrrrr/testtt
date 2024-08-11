@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #333;
+        }
+
+        thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            font-weight: bold;
+            font-size: 16px;
+            background-color: #0056b3;
+            color: white;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e2e6ea;
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        .action-button {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 5px;
+        }
+
+        .action-button:hover {
+            color: #0056b3;
+        }
+
+        .delete-button {
+            color: #dc3545;
+        }
+
+        .delete-button:hover {
+            color: #c82333;
+        }
+
+        @media (max-width: 768px) {
+            thead {
+                display: none;
+            }
+            tr {
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                background-color: #ffffff;
+                justify-self: center;
+
+                direction: rtl;
+            }
+            td {
+                display: block;
+                text-align: left;
+                position: relative;
+                padding: 12px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                right: 0;
+                width: 40%;
+                padding: 10px;
+                font-weight: bold;
+                background-color: #007bff;
+                color: white;
+                border-left: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                white-space: nowrap;
+                text-align: left;
+            }
+
+            .actions {
+                display: block;
+                text-align: left;
+                position: relative;
+                padding: 12px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+            }
+
+            .action-button {
+                font-size: 20px;
+                text-align: center;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr style="text-align: center;">
+                    <th>رقم العقار</th>
+                    <th>اسم العقار</th>
+                    <th>الموقع</th>
+                    <th>السعر</th>
+                    <th>المساحة</th>
+                    <th>عدد الغرف</th>
+                    <th>إجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">1</td>
+                    <td data-label="اسم العقار">فيلا فاخرة</td>
+                    <td data-label="الموقع">الرياض</td>
+                    <td data-label="السعر">2,000,000 SAR</td>
+                    <td data-label="المساحة">500 م²</td>
+                    <td data-label="عدد الغرف">5</td>
+                    <td class="actions">
+                        <button class="action-button"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="رقم العقار">2</td>
+                    <td data-label="اسم العقار">شقة حديثة</td>
+                    <td data-label="الموقع">جدة</td>
+                    <td data-label="السعر">1,200,000 SAR</td>
+                    <td data-label="المساحة">200 م²</td>
+                    <td data-label="عدد الغرف">3</td>
+                    <td class="actions">
+                        <button class="action-button m-2"><i class="fas fa-edit"></i></button>
+                        <button class="action-button delete-button"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <!-- أضف المزيد من الصفوف هنا -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

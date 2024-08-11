@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن </title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://mnazelelez.com/css/all.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/aos.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/vendors.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/bootstrap.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+
+  <style>
+     
+
+    .containerr {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    }
+
+    .text-section {
+        width: 50%;
+        padding-right: 10px;
+        margin-top: 75px;
+
+    }
+
+    .text-section h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .text-section p {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .vision-mission {
+        margin-top: 20px;
+    }
+
+    .vision, .mission {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        display: flex;
+        align-items: center;
+    }
+
+    .vision i, .mission i {
+        font-size: 24px;
+        color: #00A99D;
+        margin-left: 10px;
+    }
+
+    .vision h3, .mission h3 {
+        font-size: 20px;
+        margin: 0 10px;
+        color: #00A99D;
+    }
+
+    .vision p, .mission p {
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+    }
+
+    .image-section {
+        position: relative;
+        width: 50%;
+        text-align: center;
+    }
+
+    .image-section img {
+        width: 80%;
+        height: auto;
+        margin-top: 100px;
+        border-radius: 10px;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .play-button i {
+        font-size: 30px;
+        color: #fff;
+    }
+
+    @media screen and (max-width: 768px) {
+        .containerr {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .text-section, .image-section {
+            width: 100%;
+            padding: 0;
+        }
+
+        .text-section {
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+ 
+         body{
+             font-family: "Cairo", sans-serif;
+   font-optical-sizing: auto;
+   font-style: normal;
+   font-variation-settings:  "slnt" 0;
+         }
+ 
+         .sidenav {
+             height: 100%;
+             width: 0;
+             position: fixed;
+             z-index: 999;
+             top: 0;
+             right: 0;
+             background-color: #fff;
+             overflow-x: hidden;
+             transition: 0.5s;
+             padding-top: 60px;
+             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+         }
+ 
+         .sidenav a {
+             padding: 10px 15px;
+             text-decoration: none;
+             font-size: 18px;
+             color: #A19781;
+             display: block;
+             transition: 0.3s;
+         }
+         .sidenav button {
+             padding: 10px 15px;
+             text-decoration: none;
+             font-size: 18px;
+             display: block;
+             transition: 0.3s;
+         }
+ 
+        
+ 
+         .sidenav .closebtn {
+             position: absolute;
+             top: 0;
+             left: 25px;
+             font-size: 36px;
+             margin-right: 50px;
+         }
+ 
+         @media screen and (max-height: 450px) {
+             .sidenav {padding-top: 15px;}
+             .sidenav a {font-size: 18px;}
+         }
+ 
+         .nav-icons {
+             display: none; /* يتم إخفاء الأيقونة في البداية */
+         }
+ 
+         .nav-icons.active {
+             display: block; /* عرض الأيقونة عند النقر عليها */
+             cursor: pointer;
+         }
+     </style>
+ </head>
+ <body>
+ 
+     <nav class="navbar navbar-expand-md navbar-white bg-white shadow-sm fixed ">
+         <div class="container">
+             <a class="navbar-brand" href="index.html"  onclick="redirectToPath()" ><img src="images/WhatsApp Image 2024-06-14 at 8.23.00 PM.jpeg" width="100px" alt=""></a>
+             <button class="navbar-toggler "  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<i class="navbar-toggler-icon"></i>                   </button>
+             <div class="collapse navbar-collapse   " id="navbarNav">
+                 <ul class="navbar-nav clas m-auto">
+                    
+              
+                     <li class="nav-item">
+                         <a class="nav-link" href="#"  onclick="redirectToPath()"  >الرئيسيه</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link " href="test.html" onclick="redirectToPath()" tabindex="-1" aria-disabled="true"     >من نحن</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link " href="card.html" onclick="redirectToPath()" tabindex="-1" aria-disabled="true"     > مشاريعنا</a>
+                     </li>
+                     <li class="nav-item">
+                      <button class="header__button js-toggle-requestForm" style="background-color:#A19781;">
+                          احجز شقتك الان
+                      </button>
+                     </li>
+                     
+                 </ul>
+             </div>
+         </div>
+     </nav>
+ 
+
+     <div class="sidenav">
+      <a href="#"   onclick="redirectToPath()"  class="closebtn">&times;</a>
+      <a href="index.html"  onclick="redirectToPath()" >الرئيسية</a>
+      <a href="test.html"  onclick="redirectToPath()" > من نحن</a>
+      <a href="card.html"  onclick="redirectToPath()" > مشاريعنا</a>
+      <button class="header__button js-toggle-requestForm text-center m-auto" style="background-color:#A19781; text-align: center; margin-right: 6px; ">
+           احجز شقتك الان
+      </button>       
+   </div>
+  
+  
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const sidenav = document.querySelector('.sidenav');
+          const navIcons = document.querySelector('.navbar-toggler');
+          const closeBtn = document.querySelector('.closebtn');
+  
+          // فتح القائمة الجانبية
+          navIcons.addEventListener('click', function() {
+              sidenav.style.width = '300px';
+          });
+  
+          // إغلاق القائمة الجانبية
+          closeBtn.addEventListener('click', function() {
+              sidenav.style.width = '0';
+          });
+      });
+  </script>
+  
+  
+  <style>
+   .header__button {
+background-color: #000; /* لون خلفية الزر */
+color: #fff; /* لون نص الزر */
+padding: 5px ;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-align: center;
+}
+      
+      .nav-container {
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #fff;
+          border-radius: 20px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+      }
+      
+      .nav-item {
+          color: #A19781;
+          font-size: 16px;
+          text-decoration: none;
+          padding: 12px 24px;
+          display: inline-block;
+          transition: background-color 0.3s ease;
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: 1px;
+      }
+      
+
+  
+      .nav-item i {
+          margin-right: 8px;
+      }
+  
+      .close-btn {
+          display: none;
+      }
+  
+      @media only screen and (max-width: 600px) {
+          .nav-item {
+              padding: 10px 20px;
+          }
+  
+          .close-btn {
+              display: inline-block;
+              float:right;
+              padding: 10px;
+              cursor: pointer;
+          }
+      }
+  </style>        
+
+
+<div class="containerr">
+  <div class="image-section">
+    <img src="images/pexels-alex-qian-1180283-2343465.jpg" alt="صورة المبنى">
+ 
+</div>
+    <div class="text-section">
+        <h2>تضع الشركة نخبة من الخبراء والمختصين</h2>
+        <p>تدرس كافة العروض والمشاريع في السوق العقاري والاختيار الأمثل والأسس والكثر لخدمة العملاء والمستثمرين بناءً على أسس ومعايير علمية.</p>
+
+        <div class="vision-mission">
+            <div class="vision">
+                <i class="fas fa-eye" style="color: #A19781;"></i>
+                <div>
+                    <h3 style="color: #A19781;">الرؤية</h3>
+                    <p>أن نكون متميزين دائماً في السوق المحيط والتفوق في التطوير العقاري في القطاع السكني والتجاري والمجتمعي.</p>
+                </div>
+            </div>
+            <div class="mission">
+                <i class="fas fa-paper-plane" style="color: #A19781;"></i>
+                <div>
+                    <h3 style="color: #A19781;">الرسالة</h3>
+                    <p>نقوم بتحليل ودراسة السوق والتأثير وفق معايير ثابتة وراقية لاختيار أمثل الحلول لعملائنا وشركائنا.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+</div>
+<div class="menu -top-header js-menu">
+  <div class="menu__left">
+    <div class="menuNav ">
+      <div class="menuNav__item js-menuClose js-menu-button">
+        <a href="#home">الرئيسية
+        </a>
+      </div>
+
+      <div class="menuNav__item js-menuClose js-menu-button">
+        <a href="#about">
+            من نحن
+        </a>
+      </div>
+
+      <div class="menuNav__item js-menuClose js-menu-button">
+        <a href="#service">
+            خدماتنا
+        </a>
+      </div>
+
+      <div class="menuNav__item js-menuClose js-menu-button">
+        <a href="#projects">
+            مشاريعنا
+        </a>
+      </div>
+
+      <div class="menuNav__item js-menuClose js-menu-button">
+        <a href="#advanteg">
+            مميزات العمل
+        </a>
+
+      </div>
+
+      <div class="menuNav__item js-menuClose js-menu-button">
+        <a href="https://mnazelelez.com/contact">اتصل بنا</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu__right">
+    <div class="menuImage js-menuImage">
+      <img src="https://mnazelelez.com/storage/favicon_image/8UW7GZNN67vpATB7jmXOMr1fODTH1grBUHMamTAF.png" alt="image">
+    </div>
+  </div>
+
+  <div class="menu__close js-menuClose js-menu-button">
+    <i class="icon-cross"></i>
+  </div>
+</div>
+<footer class="bg-dark-f" id="call">
+  <div class="container">
+    <div class="row p-5">
+      <div class="col-md-3">
+          <img src="images/Asset 1.png" alt=""></div>
+      <div class="col-md-3">
+       <div class="d-flex align-items-center mb-10">
+         <div class="square-footer"></div>
+        <h5 class="text-white me-3">العنوان</h5>
+       </div>
+       <div class="d-flex align-items-center">
+        <div class="icon-footer"><i class="fa-solid fa-location-dot"></i></div>
+       <p class="text-white me-3 mt-20">المملكة العربية السعودية - جدة  </p>
+      </div>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex align-items-center mb-30">
+          <div class="square-footer"></div>
+         <h5 class="text-white me-3">رقم الجوال</h5>
+        </div>
+        <div class="d-flex align-items-center">
+          <div class="icon-footer"><i class="fa-solid fa-phone"></i></div>
+         <p class="text-white me-3 ">+966577120215</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex align-items-center mb-30">
+          <div class="square-footer"></div>
+         <h5 class="text-white me-3">البريد الالكتروني</h5>
+        </div>
+        <div class="d-flex align-items-center">
+          <div class="icon-footer"><i class="fa-regular fa-envelope"></i></div>
+         <p class="text-white me-3 "><a href="/cdn-cgi/l/email-protection" class="__cf_email__ text-white" data-cfemail="6b06050a110e072b0c060a020745080406">[email&#160;protected]</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="requestForm js-requestForm">
+  <div class="requestForm__overlay js-toggle-requestForm"></div>
+
+  <div class="requestForm__content">
+    <div class="requestForm__container">
+      <!-- <div class="requestForm__close js-toggle-requestForm">
+        <button>
+          <i class="icon-cross"></i>
+        </button>
+      </div>
+
+      <h3 class="requestForm__title"><span class="text-accent-1">Request</span><br> a visit</h3> -->
+
+      <div class="requestForm__form contactForm row y-gap-30">
+        <form action="https://mnazelelez.com/new-order" method="post">
+            <input type="hidden" name="_token" value="cqQnbnryx1KwQK60ZzfahTDb8bseXekvOwMXllvT">            <div class="mb-3 position-relative">
+            <!-- <div class="icont-form">
+              <i class="fa-regular fa-user"></i>
+            </div> -->
+            <input type="text" class="form-control" placeholder="الاسم" name="name" value="" required>
+          </div>
+          <div class="mb-3 position-relative">
+            <!-- <div class="icont-form">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div> -->
+            <input type="text" class="form-control" placeholder="رقم الجوال" name="phone" value="" required>
+          </div>
+          <div class="mb-3 position-relative">
+            <!-- <div class="icont-form">
+              <i class="fa-solid fa-house"></i>
+            </div> -->
+            <select class="form-select" aria-label="Default select example" name="type" required>
+                <option  selected  value=""> نوع العقار</option>
+                <option  value="شقق">شقق</option>
+                <option  value="فلة">فلة</option>
+                <option  value="اراضي">اراضي</option>
+                <option  value="قصور">قصور</option>
+                <option  value="عمارة">عمارة</option>
+                <option  value="أخرى">أخرى</option>
+            </select>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="mb-3 position-relative">
+              <!-- <div class="icont-form">
+                <i class="fa-regular fa-credit-card"></i>
+              </div> -->
+              <select class="form-select" style="width: 175px;" aria-label="Default select example" name="payment" required>
+                  <option  selected  value="">طريقة الدفع</option>
+                  <option  value="كاش">كاش</option>
+                  <option  value="بنك">بنك</option>
+              </select>
+            </div>
+            <div class="mb-3 position-relative">
+              <!-- <div class="icont-form">
+                <i class="fa-solid fa-share-nodes"></i>
+              </div> -->
+              <select class="form-select" style="width: 175px;" aria-label="Default select example" name="how_know_us" required>
+                  <option  selected  value="">كيف عرفت عنا</option>
+                  <option  value="انستجرام">انستجرام</option>
+                  <option  value="سناب">سناب</option>
+                  <option  value="صديق">صديق</option>
+                  <option  value="غير ذلك">غير ذلك</option>
+              </select>
+            </div>
+          </div>
+          <button class="button -md -dark-1 bg-accent-1 text-white col-12">أرسل طلبك</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://mnazelelez.com/js/vendors.js"></script>
+<script src="https://mnazelelez.com/js/aos.js"></script>
+<script src="https://mnazelelez.com/js/main.js"></script>
+
+<script>
+  AOS.init();
+
+    
+      </script>
+</body>
+</html>

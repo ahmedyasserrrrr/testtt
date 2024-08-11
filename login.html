@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات المشروع</title>
+    <style>
+      
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .project-info {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .project-info h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #E0A30B; /* golden line */
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .project-info p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .form-container {
+            flex: 2;
+            max-width: 600px;
+        }
+
+        .form-container h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-sections {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .form-section label {
+            display: block;
+            text-align: right;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="password"],
+        .form-section input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-section input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .form-section .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #7a5af5;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .form-container button:hover {
+            background-color: #5948d7;
+        }
+
+        .form-container img {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 100px; /* Adjust size of the logo as needed */
+        }
+
+        .form-section a {
+            display: block;
+            text-align: right;
+            color: #7a5af5;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .form-section a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-info {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .form-sections {
+                flex-direction: column;
+            }
+
+            .form-section {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-info h3 {
+                font-size: 20px;
+            }
+
+            .project-info p {
+                font-size: 14px;
+            }
+
+            .form-container h3 {
+                font-size: 18px;
+            }
+
+            .form-section label {
+                font-size: 12px;
+            }
+
+            .form-section input[type="text"],
+            .form-section input[type="password"],
+            .form-section input[type="file"] {
+                font-size: 14px;
+            }
+
+            .form-container button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="project-info">
+        <h3>معلومات المشروع</h3>
+        <p>عنوان الحي: حي / المنطقه</p>
+        <p>حاله المشروع: </p>
+        <p>نسبه  الانجاز: </p>
+    </div>
+
+    <div class="form-container">
+        <img src="images/WhatsApp Image 2024-06-14 at 8.23.00 PM.jpeg" alt="Logo"> <!-- Add the correct path to your logo image here -->
+        <h3>تسجيل الدخول وإدخال المتطلبات</h3>
+        <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-sections">
+                <div class="form-section">
+                    <label for="image1">الصوره:</label>
+                    <input type="file" id="image1" name="image1" accept="image/*" required>
+                    <label for="username">عنوان البوست</label>
+                    <input type="text" id="username" name="title" required>
+                    <label for="password">نوع المشروع</label>
+                    <input type="text" id="password" name="textarea" required>
+                  
+                </div>
+
+                <!-- Form 2 Section -->
+                <div class="form-section">
+                    <label for="field2">حاله المشروع</label>
+                    <input type="text" id="field2" name="country" required>
+                    <label for="field3">الموقع</label>
+                    <input type="text" id="field3" name="area" required>
+                    <label for="floors">نسبه الانجاز </label>
+                    <input type="text" id="floors" name="floors" required>
+                
+                </div>
+            </div>
+            <button type="submit">إرسال وتسجيل</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

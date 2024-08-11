@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريعنا</title>
+     <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://mnazelelez.com/css/all.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/aos.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/vendors.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/bootstrap.css">
+  <link rel="stylesheet" href="https://mnazelelez.com/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            text-align: center;
+         
+        }
+        .containers {
+           height: 20%;
+            text-align: center;
+         
+        }
+
+        h2 {
+            color: #0a4d4d;
+            font-size: 2.5em;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .cards {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: auto;
+    
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .card p {
+            margin: 5px 0;
+            color: #0a4d4d;
+        }
+
+        .card span {
+            display: block;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>مشاريعنا</h2>
+        <p>نعرض لكم آخر المشاريع المميزة</p>
+        <div class="col-md-8 " style="text-align: center; margin: auto;" >
+            <div class="cards">
+                <div class="card" style="text-align: center;">
+                    <img src="images/pexels-alex-qian-1180283-2343465.jpg" alt="مشروع 1">
+                    <h3>مشروع 31</h3>
+                    <span>السعر يبدأ من 530000 ألف</span>
+                    <p>النوع: سكني</p>
+                    <p>المرحلة: قيد الإنشاء</p>
+                </div>
+              
+            </div>
+           
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="containers" style="background-color: #A19781;">
+        <h2>مشاريعنا</h2>
+        <p>نعرض لكم آخر المشاريع المميزة</p>
+        <div class="col-md-8 " style="text-align: center; margin: auto;" >
+            <div class="slider-container bodyy">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="images/pexels-photo-1022936.jpeg" alt="Image 1" class="active">
+                        <img src="images/pexels-photo-1732414.jpeg" alt="Image 2">
+                        <img src="images/pexels-photo-206172.jpeg" alt="Image 3">
+                        <img src="images/pexels-photo-210538.jpeg" alt="Image 4">
+                        <img src="images/pexels-photo-106399.jpeg" alt="Image 5">
+                    </div>
+                    <button class="arrow arrow-right" onclick="prevSlide()">&#10094;</button>
+                    <button class="arrow arrow-left" onclick="nextSlide()">&#10095;</button>
+                </div>
+                <div class="thumbnails">
+                    <img src="images/pexels-photo-1022936.jpeg" alt="Image 1" onclick="moveToSlide(0)" class="active">
+                    <img src="images/pexels-photo-1732414.jpeg" alt="Image 2" onclick="moveToSlide(1)">
+                    <img src="images/pexels-photo-206172.jpeg" alt="Image 3" onclick="moveToSlide(2)">
+                    <img src="images/pexels-photo-210538.jpeg" alt="Image 4" onclick="moveToSlide(3)">
+                    <img src="images/pexels-photo-106399.jpeg" alt="Image 5" onclick="moveToSlide(4)">
+                </div>
+            </div><!-- side -->
+            
+        </div>
+    </div>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa:wght@200..800&display=swap');
+    
+    .bodyy {
+    font-family: "Changa", sans-serif;    
+        padding: 60px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    
+    
+    .slider-container {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+    
+    .slider {
+    position: relative;
+    width: 380px;
+    height: 300px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slides {
+    display: flex;
+    transition: opacity 0.5s ease-in-out;
+    }
+    
+    .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    }
+    
+    .slides img.active {
+    opacity: 1;
+    }
+    
+    .thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    }
+    
+    .thumbnails img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    }
+    
+    .thumbnails img.active {
+    border-color: #333;
+    }
+    
+    .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.267);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20%;
+    transition: background-color 0.3s;
+    }
+    
+    .arrow-left {
+    left: 10px;
+    }
+    
+    .arrow-right {
+    right: 10px;
+    }
+    
+    .arrow:hover {
+    background-color: rgba(0, 0, 0, 10);
+    }
+    
+    .description, .price, .ingredients, .faq {
+    margin-bottom: 20px;
+    }
+    
+    .price {
+    font-size: 20px;
+    font-weight: bold;
+    }
+    
+    .ingredients ul {
+    list-style-type: none;
+    padding: 0;
+    }
+    
+    
+    
+    .ingredients li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    
+    .ingredients button {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    
+    .ingredients button:hover {
+    background-color: white;
+    color: orange;
+    }
+    
+    .faq-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    }
+    
+    .answer {
+    display: none;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    }
+    
+    .toggle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    }
+    
+    .toggle-icon:hover {
+    background-color: white;
+    color: orange;
+    }
+    </style><!-- style side and details -->
+    
+<script>
+    let currentSlide = 0;
+    let slideInterval;
+
+    function updateThumbnails() {
+        const thumbnails = document.querySelectorAll('.thumbnails img');
+        thumbnails.forEach((thumbnail, index) => {
+            if (index === currentSlide) {
+                thumbnail.classList.add('active');
+            } else {
+                thumbnail.classList.remove('active');
+            }
+        });
+    }
+
+    function moveToSlide(slideIndex) {
+        const slides = document.querySelectorAll('.slides img');
+        slides[currentSlide].classList.remove('active');
+        currentSlide = slideIndex;
+        slides[currentSlide].classList.add('active');
+        updateThumbnails();
+    }
+
+    function nextSlide() {
+        const slides = document.querySelectorAll('.slides img');
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+        updateThumbnails();
+    }
+
+    function prevSlide() {
+        const slides = document.querySelectorAll('.slides img');
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        updateThumbnails();
+    }
+
+    function startSlideInterval() {
+        slideInterval = setInterval(() => {
+            nextSlide();
+        }, 3000); // تحريك الصور كل 3 ثواني
+    }
+
+    function stopSlideInterval() {
+        clearInterval(slideInterval);
+    }
+
+    // تبدأ تحريك الصور تلقائيا عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', () => {
+        startSlideInterval();
+    });
+
+    // توقف تحريك الصور عند الضغط على صورة
+    const slides = document.querySelectorAll('.slides img');
+    slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => {
+            stopSlideInterval();
+            moveToSlide(index);
+            startSlideInterval(); // استئناف التحريك بعد تحريك يدوي
+        });
+    });
+
+    function toggleAnswer(id) {
+        const answer = document.getElementById(`answer-${id}`);
+        const toggleIcon = document.getElementById(`toggle-icon-${id}`);
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            toggleIcon.innerText = '+';
+        } else {
+            answer.style.display = 'block';
+            toggleIcon.innerText = '-';
+        }
+    }
+</script>
+
+</body>
+</html>

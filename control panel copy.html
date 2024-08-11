@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <style>
+      
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-page {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 350px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: right;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 15px;
+            color: #333;
+            display: flex;
+ display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .card .actions button {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            text-align: right;
+        }
+
+        .card table th, .card table td {
+            padding: 10px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card table th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .card table td {
+            color: #666;
+        }
+
+        .open-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .open-button:hover {
+            background-color: #0056b3;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px 10px;
+            z-index: 10;
+        }
+
+        .close-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+
+    <div class="overlay" id="overlay">
+        <div class="card-page">
+            <button class="close-button" onclick="closeOverlay()">×</button>
+            <div class="card-container">
+                <div class="card">
+                    <img src="images/pexels-pixabay-53610.jpg" alt="Turquoise Villas 3">
+                    <div class="card-content">
+                        <h3>
+                            برج سكني
+                            <div class="actions">
+                                <button><i class="fas fa-edit" style="color: #00bcd4;"></i></button>
+                                <button><i class="fas fa-trash" style="color: red;"></i></button>
+                            </div>
+                        </h3>
+                        <table>
+                            <tr>
+                                <th>نوع المشروع</th>
+                                <td>سكني</td>
+                            </tr>
+                            <tr>
+                                <th>وصف المشروع</th>
+                                <td>فلل مستقلة</td>
+                            </tr>
+                            <tr>
+                                <th>حالة البيع</th>
+                                <td>مفتاح للبيع</td>
+                            </tr>
+                            <tr>
+                                <th>الموقع</th>
+                                <td>حي السلمانية، الرياض</td>
+                            </tr>
+                            <tr>
+                                <th>نسبة الإنجاز</th>
+                                <td>86%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/pexels-pixabay-53610.jpg" alt="Turquoise Villas 3">
+                    <div class="card-content">
+                        <h3>
+                            برج سكني
+                            <div class="actions">
+                                <button><i class="fas fa-edit" style="color: #00bcd4;"></i></button>
+                                <button><i class="fas fa-trash" style="color: red;"></i></button>
+                            </div>
+                        </h3>
+                        <table>
+                            <tr>
+                                <th>نوع المشروع</th>
+                                <td>سكني</td>
+                            </tr>
+                            <tr>
+                                <th>وصف المشروع</th>
+                                <td>فلل مستقلة</td>
+                            </tr>
+                            <tr>
+                                <th>حالة البيع</th>
+                                <td>مفتاح للبيع</td>
+                            </tr>
+                            <tr>
+                                <th>الموقع</th>
+                                <td>حي السلمانية، الرياض</td>
+                            </tr>
+                            <tr>
+                                <th>نسبة الإنجاز</th>
+                                <td>86%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/pexels-pixabay-53610.jpg" alt="Turquoise Villas 3">
+                    <div class="card-content">
+                        <h3>
+                            برج سكني
+                            <div class="actions">
+                                <button><i class="fas fa-edit" style="color: #00bcd4;"></i></button>
+                                <button><i class="fas fa-trash" style="color: red;"></i></button>
+                            </div>
+                        </h3>
+                        <table>
+                            <tr>
+                                <th>نوع المشروع</th>
+                                <td>سكني</td>
+                            </tr>
+                            <tr>
+                                <th>وصف المشروع</th>
+                                <td>فلل مستقلة</td>
+                            </tr>
+                            <tr>
+                                <th>حالة البيع</th>
+                                <td>مفتاح للبيع</td>
+                            </tr>
+                            <tr>
+                                <th>الموقع</th>
+                                <td>حي السلمانية، الرياض</td>
+                            </tr>
+                            <tr>
+                                <th>نسبة الإنجاز</th>
+                                <td>86%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- يمكنك تكرار الكروت (cards) هنا حسب الحاجة -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openOverlay() {
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        function closeOverlay() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
